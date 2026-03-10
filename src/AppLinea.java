@@ -4,6 +4,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.util.Scanner;
 
 public class AppLinea {
 
@@ -11,18 +12,24 @@ public class AppLinea {
 
         // Declaramos el objeto de tipo File que referencia al fichero de entrada
         File ficheroEntrada = new File("entrada.txt");
+         Scanner sc = new Scanner(System.in);
+
+         int desplazamiento = pedirDesplazamiento();
 
         // Declaramos el objeto de tipo File que referencia al fichero de entrada
         File ficheroSalida = new File("salidaLinea.txt");
+        
 
         // Abrimos el archivo para leerlo
         // ALTERNATIVA: FileReader lector = new FileReader("entrada.txt");
         FileReader lector = new FileReader(ficheroEntrada);
+        lector.close();
 
         // Creamos el archivo de salida
         // SI NO EXISTE, LO CREA
         // ALTERNATIVA: FileWriter escritor = new FileWriter("salida.txt");
         FileWriter escritor = new FileWriter(ficheroSalida);
+        escritor.close();
 
         // Abrimos el archivo para leerlo
         // ALTERNATIVA: BufferedReader lector = new BufferedReader(new FileReader("entrada.txt"));
