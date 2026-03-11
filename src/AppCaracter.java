@@ -2,16 +2,44 @@
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.util.Scanner;
 
 public class AppCaracter {
 
     public static void main(String[] args) throws Exception {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Introduce el desplazamiento (-25 a 25): ");
+        int desplazamiento = sc.nextInt();
+        sc.nextLine();
 
         // Declaramos el objeto de tipo File que referencia al fichero de entrada
-        File ficheroEntrada = new File("entrada.txt");
+        File ficheroEntrada;
+        String rutaEntrada;
 
+        do {
+         System.out.print("Introduce la ruta relativa del fichero de entrada: ");
+         rutaEntrada = sc.nextLine();
+          ficheroEntrada = new File(rutaEntrada);
+
+       if (!ficheroEntrada.exists()) {
+         System.out.println("Ese fichero no existe. Intentalo otra vez.");
+    }
+
+    }   while (!ficheroEntrada.exists());
         // Declaramos el objeto de tipo File que referencia al fichero de entrada
-        File ficheroSalida = new File("salidaCaracter.txt");
+        File ficheroSalida;
+        String rutaSalida;
+
+        do {
+       System.out.print("Introduce la ruta absoluta del fichero de salida: ");
+       rutaSalida = sc.nextLine();
+       ficheroSalida = new File(rutaSalida);
+
+      if (ficheroSalida.exists()) {
+        System.out.println("Ese fichero ya existe. Escribe otra ruta.");
+    }
+
+    } while (ficheroSalida.exists());
 
         // Abrimos el archivo para leerlo
         // ALTERNATIVA: FileReader lector = new FileReader("entrada.txt");
