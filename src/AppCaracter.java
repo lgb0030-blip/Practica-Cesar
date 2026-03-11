@@ -17,15 +17,15 @@ public class AppCaracter {
         String rutaEntrada;
 
         do {
-         System.out.println("Introduce la ruta relativa del fichero de entrada: ");
-         rutaEntrada = sc.nextLine();
-         ficheroEntrada = new File(rutaEntrada);
+        System.out.println("Introduce la ruta relativa del fichero de entrada: ");
+        rutaEntrada = sc.nextLine();
+        ficheroEntrada = new File(rutaEntrada);
 
-       if (!ficheroEntrada.exists()) {
-         System.out.println("Ese fichero no existe. Intentalo otra vez: ");
-    }
+        if (!ficheroEntrada.exists()) {
+        System.out.println("Ese fichero no existe. Intentalo otra vez: ");
+        }
 
-    }   while (!ficheroEntrada.exists());
+        }   while (!ficheroEntrada.exists());
         // Declaramos el objeto de tipo File que referencia al fichero de entrada
         File ficheroSalida;
         String rutaSalida;
@@ -35,7 +35,7 @@ public class AppCaracter {
        rutaSalida = sc.nextLine();
        ficheroSalida = new File(rutaSalida);
 
-      if (ficheroSalida.exists()) {
+       if (ficheroSalida.exists()) {
         System.out.println("Ese fichero ya existe. Escribe otra ruta.");
     }
 
@@ -57,6 +57,13 @@ public class AppCaracter {
         while ((caracterInt = lector.read()) != -1) {
             // Convertimos el carácter en formato int a char para poder trabajar con el
             char caracter = (char) caracterInt;
+
+            if (caracter >= '!') {
+                caracter = (char) (caracter + desplazamiento);
+            }
+
+            System.out.println(caracter);
+            escritor.write(caracter);
 
             // Convertimos el caracter a mayuscula
             char mayuscula = Character.toUpperCase(caracter);
