@@ -8,13 +8,13 @@ public class AppCaracter {
 
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Introduce el desplazamiento (-25 a 25): ");
+        System.out.println("Introduce el desplazamiento (-25 a 25): ");
         int desplazamiento = sc.nextInt();
         sc.nextLine();
 
         // Declaramos el objeto de tipo File que referencia al fichero de entrada
         File ficheroEntrada;
-        String rutaEntrada;
+        String returnEntrada;
 
         do {
          System.out.print("Introduce la ruta relativa del fichero de entrada: ");
