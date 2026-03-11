@@ -14,15 +14,15 @@ public class AppCaracter {
 
         // Declaramos el objeto de tipo File que referencia al fichero de entrada
         File ficheroEntrada;
-        String returnEntrada;
+        String rutaEntrada;
 
         do {
-         System.out.print("Introduce la ruta relativa del fichero de entrada: ");
+         System.out.println("Introduce la ruta relativa del fichero de entrada: ");
          rutaEntrada = sc.nextLine();
-          ficheroEntrada = new File(rutaEntrada);
+         ficheroEntrada = new File(rutaEntrada);
 
        if (!ficheroEntrada.exists()) {
-         System.out.println("Ese fichero no existe. Intentalo otra vez.");
+         System.out.println("Ese fichero no existe. Intentalo otra vez: ");
     }
 
     }   while (!ficheroEntrada.exists());
