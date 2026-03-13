@@ -64,20 +64,6 @@ public class AppCaracter {
 
             System.out.println(caracter);
             escritor.write(caracter);
-
-            // Convertimos el caracter a mayuscula
-            char mayuscula = Character.toUpperCase(caracter);
-
-            // Mostramos por pantalla
-            System.out.print(mayuscula);
-
-            /*
-                 * Escribimos en el fichero de salida.
-                 * Se recomienda (si es posible) no almacenar todo el
-                 * contenido del fichero en un String, ya que desconocemos
-                 * su tamaño (puede ser de mucho tamaño)
-             */
-            escritor.write(mayuscula);
         }
 
         // Cerramos los archivos
